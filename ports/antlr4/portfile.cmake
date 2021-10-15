@@ -25,6 +25,7 @@ vcpkg_extract_source_archive_ex(
         uuid_discovery_fix.patch
         export_guid.patch
         fix_utfcpp_dependency.patch
+        change-cxx-standard-to-17.patch
 )
 
 vcpkg_configure_cmake(
