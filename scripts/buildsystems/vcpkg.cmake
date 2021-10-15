@@ -554,7 +554,7 @@ function(add_executable)
                 add_custom_command(TARGET "${target_name}" POST_BUILD
                     COMMAND "${Z_VCPKG_POWERSHELL_PATH}" -noprofile -executionpolicy Bypass -file "${Z_VCPKG_TOOLCHAIN_DIR}/msbuild/applocal.ps1"
                         -targetBinary "$<TARGET_FILE:${target_name}>"
-                        -installedDir "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}$<$<CONFIG:Debug>:/debug>/bin"
+                        -installedDir "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/bin"
                         -OutVariable out
                     ${EXTRA_OPTIONS}
                 )
@@ -563,7 +563,7 @@ function(add_executable)
                     add_custom_command(TARGET "${target_name}" POST_BUILD
                     COMMAND python "${Z_VCPKG_TOOLCHAIN_DIR}/osx/applocal.py"
                         "$<TARGET_FILE:${target_name}>"
-                        "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}$<$<CONFIG:Debug>:/debug>"
+                        "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}"
                     )
                 endif()
             endif()
@@ -588,7 +588,7 @@ function(add_library)
             add_custom_command(TARGET "${target_name}" POST_BUILD
                 COMMAND "${Z_VCPKG_POWERSHELL_PATH}" -noprofile -executionpolicy Bypass -file "${Z_VCPKG_TOOLCHAIN_DIR}/msbuild/applocal.ps1"
                     -targetBinary "$<TARGET_FILE:${target_name}>"
-                    -installedDir "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}$<$<CONFIG:Debug>:/debug>/bin"
+                    -installedDir "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/bin"
                     -OutVariable out
             )
         endif()
@@ -643,7 +643,7 @@ function(x_vcpkg_install_local_dependencies)
                 install(CODE "message(\"-- Installing app dependencies for ${target}...\")
                     execute_process(COMMAND \"${Z_VCPKG_POWERSHELL_PATH}\" -noprofile -executionpolicy Bypass -file \"${Z_VCPKG_TOOLCHAIN_DIR}/msbuild/applocal.ps1\"
                         -targetBinary \"${arg_DESTINATION}/$<TARGET_FILE_NAME:${target}>\"
-                        -installedDir \"${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}$<$<CONFIG:Debug>:/debug>/bin\"
+                        -installedDir \"${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/bin\"
                         -OutVariable out)"
                     ${component_param}
                 )
