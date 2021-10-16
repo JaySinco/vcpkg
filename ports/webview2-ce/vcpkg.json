@@ -1,0 +1,7 @@
+{
+    "name": "webview2-ce",
+    "version-string": "1.0.992.28",
+    "port-version": 0,
+    "description": "The WebView2 control",
+    "homepage": "https://aka.ms/webview"
+}

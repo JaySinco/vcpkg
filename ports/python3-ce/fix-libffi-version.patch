@@ -1,0 +1,13 @@
+diff --git a/PCbuild/get_externals.bat b/PCbuild/get_externals.bat
+index d818f9d..39f6dec 100644
+--- a/PCbuild/get_externals.bat
++++ b/PCbuild/get_externals.bat
+@@ -76,7 +76,7 @@ for %%e in (%libraries%) do (
+ echo.Fetching external binaries...
+ 
+ set binaries=
+-if NOT "%IncludeLibffi%"=="false"  set binaries=%binaries% libffi
++if NOT "%IncludeLibffi%"=="false"  set binaries=%binaries% libffi-3.3.0
+ if NOT "%IncludeSSL%"=="false"     set binaries=%binaries% openssl-bin-1.1.1k-1
+ if NOT "%IncludeTkinter%"=="false" set binaries=%binaries% tcltk-8.6.9.0
+ if NOT "%IncludeSSLSrc%"=="false"  set binaries=%binaries% nasm-2.11.06
