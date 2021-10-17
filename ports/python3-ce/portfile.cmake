@@ -47,7 +47,7 @@ file(RENAME ${CURRENT_PACKAGES_DIR}/tools/python3/Lib/python38.dll
 
 vcpkg_find_acquire_program(7Z)
 vcpkg_execute_build_process(
-    COMMAND ${7Z} a ${CURRENT_PACKAGES_DIR}/tools/python3/Lib/python38.zip ./Lib/* -x!__pycache__
+    COMMAND ${7Z} a ${CURRENT_PACKAGES_DIR}/tools/python3/python38.zip ./Lib/* -x!__pycache__
     WORKING_DIRECTORY ${SOURCE_PATH}
     LOGNAME 7z-lib-${TARGET_TRIPLET}
 )
