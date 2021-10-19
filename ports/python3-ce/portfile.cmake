@@ -6,17 +6,18 @@ vcpkg_from_github(
     REF v3.8.10
     SHA512 c940eb8b225f2c38558ca9a7c4237910c96bcac64eb9ada310f9a0175faed7d8650d142ee99ee4e16ff0bc883fe0587aed685aa05982b06c67793374932815e9
     HEAD_REF master
-    PATCHES
-        fix-libffi-version.patch
 )
 
-vcpkg_execute_build_process(
-    COMMAND cmd.exe /c get_externals.bat
-    WORKING_DIRECTORY ${SOURCE_PATH}/PCbuild
-    LOGNAME get-externals-${TARGET_TRIPLET}
+vcpkg_download_distfile(ARCHIVE
+    URLS "cmd.exe /c PCbuild/get_externals.bat"
+    FILENAME "python-cpython-v3.8.10-externals.zip"
+    SHA512 457c3c8e456fc63971acb053f81142764519d3311e0d12a0a95d4d2c4e46a3144fc315b85654df765855c28cc27777cc7dc070671501d9bb03b072d4a7eee388
 )
 
-file(RENAME ${SOURCE_PATH}/externals/libffi-3.3.0 ${SOURCE_PATH}/externals/libffi)
+file(ARCHIVE_EXTRACT
+    INPUT ${ARCHIVE}
+    DESTINATION ${SOURCE_PATH}
+)
 
 vcpkg_execute_build_process(
     COMMAND cmd.exe /c build.bat -p x64
