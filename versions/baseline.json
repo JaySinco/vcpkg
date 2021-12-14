@@ -5502,7 +5502,7 @@
     },
     "python3-ce": {
       "baseline": "3.8.10",
-      "port-version": 0
+      "port-version": 1
     },
     "qca": {
       "baseline": "2.3.4",

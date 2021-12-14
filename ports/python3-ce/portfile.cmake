@@ -11,7 +11,7 @@ vcpkg_from_github(
 vcpkg_download_distfile(ARCHIVE
     URLS "cmd.exe /c PCbuild/get_externals.bat"
     FILENAME "python-cpython-v3.8.10-externals.zip"
-    SHA512 0
+    SKIP_SHA512
 )
 
 file(ARCHIVE_EXTRACT

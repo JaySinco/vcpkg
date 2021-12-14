@@ -1,6 +1,7 @@
 {
   "name": "python3-ce",
   "version-string": "3.8.10",
+  "port-version": 1,
   "description": "The Python programming language",
   "homepage": "https://github.com/python/cpython"
 }
