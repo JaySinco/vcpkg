@@ -1,7 +1,6 @@
 {
-    "name": "mujoco-ce",
-    "version-string": "2.1.0",
-    "port-version": 0,
-    "description": "MuJoCo is a dynamic library with a C API",
-    "homepage": "https://mujoco.org/"
+  "name": "mujoco-ce",
+  "version-string": "2.1.0",
+  "description": "MuJoCo is a dynamic library with a C API",
+  "homepage": "https://mujoco.org/"
 }
