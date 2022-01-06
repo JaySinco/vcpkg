@@ -22,6 +22,9 @@ vcpkg_cmake_configure(
 
 vcpkg_cmake_install()
 
+file(RENAME ${CURRENT_PACKAGES_DIR}/include ${CURRENT_PACKAGES_DIR}/libxl)
+file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/include)
+file(RENAME ${CURRENT_PACKAGES_DIR}/libxl ${CURRENT_PACKAGES_DIR}/include/libxl)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 file(INSTALL

@@ -4082,7 +4082,7 @@
     },
     "libxl-ce": {
       "baseline": "4.0.1",
-      "port-version": 0
+      "port-version": 1
     },
     "libxlsxwriter": {
       "baseline": "1.1.4",
