@@ -11,7 +11,7 @@ vcpkg_extract_source_archive_ex(
     ARCHIVE ${ARCHIVE}
 )
 
-file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/extras/libtorch)
-file(RENAME ${SOURCE_PATH}/include/ ${CURRENT_PACKAGES_DIR}/extras/libtorch/include/)
-file(RENAME ${SOURCE_PATH}/lib/ ${CURRENT_PACKAGES_DIR}/extras/libtorch/lib/)
-file(RENAME ${SOURCE_PATH}/share/ ${CURRENT_PACKAGES_DIR}/extras/libtorch/share/)
+file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/etc/libtorch)
+file(RENAME ${SOURCE_PATH}/include/ ${CURRENT_PACKAGES_DIR}/etc/libtorch/include/)
+file(RENAME ${SOURCE_PATH}/lib/ ${CURRENT_PACKAGES_DIR}/etc/libtorch/lib/)
+file(RENAME ${SOURCE_PATH}/share/ ${CURRENT_PACKAGES_DIR}/etc/libtorch/share/)

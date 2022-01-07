@@ -31,24 +31,24 @@ file(COPY ${SOURCE_PATH}/PCbuild/amd64/python38.lib DESTINATION ${CURRENT_PACKAG
 file(COPY ${SOURCE_PATH}/PCbuild/amd64/python38.dll DESTINATION ${CURRENT_PACKAGES_DIR}/bin/)
 
 file(COPY ${SOURCE_PATH}/PCbuild/amd64/
-    DESTINATION ${CURRENT_PACKAGES_DIR}/extras/python3/Lib/
+    DESTINATION ${CURRENT_PACKAGES_DIR}/etc/python3/Lib/
     FILES_MATCHING PATTERN *.pyd
 )
 file(COPY ${SOURCE_PATH}/PCbuild/amd64/
-    DESTINATION ${CURRENT_PACKAGES_DIR}/extras/python3/Lib/
+    DESTINATION ${CURRENT_PACKAGES_DIR}/etc/python3/Lib/
     FILES_MATCHING PATTERN *.dll
 )
-file(COPY ${SOURCE_PATH}/PCbuild/amd64/python.exe DESTINATION ${CURRENT_PACKAGES_DIR}/extras/python3/)
-file(REMOVE ${CURRENT_PACKAGES_DIR}/extras/python3/Lib/vcruntime140.dll)
-file(REMOVE ${CURRENT_PACKAGES_DIR}/extras/python3/Lib/vcruntime140_1.dll)
-file(REMOVE ${CURRENT_PACKAGES_DIR}/extras/python3/Lib/python3.dll)
-file(RENAME ${CURRENT_PACKAGES_DIR}/extras/python3/Lib/python38.dll
-    ${CURRENT_PACKAGES_DIR}/extras/python3/python38.dll
+file(COPY ${SOURCE_PATH}/PCbuild/amd64/python.exe DESTINATION ${CURRENT_PACKAGES_DIR}/etc/python3/)
+file(REMOVE ${CURRENT_PACKAGES_DIR}/etc/python3/Lib/vcruntime140.dll)
+file(REMOVE ${CURRENT_PACKAGES_DIR}/etc/python3/Lib/vcruntime140_1.dll)
+file(REMOVE ${CURRENT_PACKAGES_DIR}/etc/python3/Lib/python3.dll)
+file(RENAME ${CURRENT_PACKAGES_DIR}/etc/python3/Lib/python38.dll
+    ${CURRENT_PACKAGES_DIR}/etc/python3/python38.dll
 )
 
 vcpkg_find_acquire_program(7Z)
 vcpkg_execute_build_process(
-    COMMAND ${7Z} a ${CURRENT_PACKAGES_DIR}/extras/python3/python38.zip ./Lib/* -x!__pycache__
+    COMMAND ${7Z} a ${CURRENT_PACKAGES_DIR}/etc/python3/python38.zip ./Lib/* -x!__pycache__
     WORKING_DIRECTORY ${SOURCE_PATH}
     LOGNAME 7z-lib-${TARGET_TRIPLET}
 )

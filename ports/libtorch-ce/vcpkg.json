@@ -1,6 +1,7 @@
 {
   "name": "libtorch-ce",
   "version-string": "1.9.0",
+  "port-version": 1,
   "description": "PyTorch is an open source machine learning library",
   "homepage": "https://pytorch.org/"
 }
