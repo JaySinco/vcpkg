@@ -1,7 +1,7 @@
 {
   "name": "libxl-ce",
-  "version-semver": "4.0.1",
-  "port-version": 1,
+  "version-semver": "4.0.3",
+  "port-version": 0,
   "description": "LibXL is a library that can read and write Excel files.",
   "homepage": "https://www.libxl.com/",
   "dependencies": [

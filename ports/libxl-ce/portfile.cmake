@@ -3,7 +3,7 @@ string(COMPARE EQUAL "${VCPKG_CRT_LINKAGE}" "dynamic" LIBXL_CRT_SHARED)
 
 vcpkg_download_distfile(ARCHIVE
     URLS ""
-    FILENAME "libxl-4.0.1.tar.gz"
+    FILENAME "libxl-4.0.3.tar.gz"
     SKIP_SHA512
 )
 
